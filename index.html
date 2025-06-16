@@ -4,161 +4,254 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Auralis</title>
-
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Meta tags for SEO -->
-  <meta name="description" content="Auralis - Premium products and services">
-  <meta name="keywords" content="Auralis luxury, Illuminate your Ritual">
-  <meta name="author" content="Auralis">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .products-dropdown:hover .dropdown-menu {
+      display: flex;
+    }
+  </style>
 </head>
 <body class="bg-white text-gray-800">
 
-  <!-- Navbar -->
-  <header class="bg-black text-white">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-      <!-- Logo -->
-      <h1 class="text-2xl font-bold">Auralis</h1>
-      
-      <!-- Navigation -->
-      <nav class="space-x-6 hidden md:flex">
-        <a href="#" class="hover:text-gray-400 transition">Home</a>
-        <a href="#" class="hover:text-gray-400 transition">About</a>
-        <a href="#" class="hover:text-gray-400 transition">Products</a>
-        <a href="#" class="hover:text-gray-400 transition">Contact</a>
-      </nav>
+<!-- Navbar -->
+<!-- Navbar -->
+<header class="bg-[#004d40] text-white sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <!-- Logo -->
+    <h1 class="text-2xl font-bold">auralis</h1>
 
-      <!-- Hamburger (mobile, no toggle yet) -->
-      <button class="md:hidden text-white focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
+    <!-- Navigation -->
+    <nav class="space-x-6 hidden md:flex items-center relative">
+      <a href="#" class="hover:text-gray-300">Home</a>
+
+      <!-- Our Story Dropdown -->
+      <div class="relative group">
+        <button class="hover:text-gray-300 focus:outline-none">About Us</button>
+        <div class="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded shadow-lg hidden group-hover:block z-50">
+          <a href="#story" class="block px-4 py-2 hover:bg-gray-200">Our Story</a>
+          <a href="#vision" class="block px-4 py-2 hover:bg-gray-200">Vision</a>
+          <a href="#locate" class="block px-4 py-2 hover:bg-gray-200">Locate Us</a>
+        </div>
+      </div>
+
+      <!-- Products Toggle -->
+      <button id="productsToggle" class="hover:text-gray-300 focus:outline-none">Products</button>
+      <!-- Support Toggle -->
+<button id="supportToggle" class="hover:text-gray-300 focus:outline-none">Support</button>
+
+
+      <a href="#contact" class="hover:text-gray-300">Contact</a>
+      <a href="#" class="hover:text-gray-300">Dealers</a>
+    </nav>
+
+    <!-- Mobile menu placeholder -->
+    <div class="md:hidden">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
     </div>
-  </header>
+  </div>
 
-  <!-- Content will go here -->
-  <main>
-    <!-- Hero Section -->
-<section class="relative h-screen bg-cover bg-center" style="background-image: url('image.png');">
-  <!-- Dark overlay -->
+  <!-- Products Mega Menu -->
+  <div id="productsMenu" class="hidden absolute left-0 top-full w-full bg-[#004d40] text-white z-40 shadow-lg px-12 py-8">
+    <div class="grid grid-cols-6 gap-6 max-w-7xl mx-auto text-sm">
+      <!-- Column 1 -->
+      <div>
+        <h4 class="font-semibold mb-2">Collection</h4>
+        <ul>
+          <li><a href="pages/orion.html" class="hover:underline block">Orion</a></li>
+          <li><a href="pages/astra.html" class="hover:underline block">Astra</a></li>
+          <li><a href="pages/nova.html" class="hover:underline block">Nova</a></li>
+        </ul>
+      </div>
+      <!-- Column 2 -->
+      <div>
+        <h4 class="font-semibold mb-2">Showers</h4>
+        <ul>
+          <li><a href="#" class="hover:underline block">Ultra Thin</a></li>
+          <li><a href="#" class="hover:underline block">Regular</a></li>
+          <li><a href="#" class="hover:underline block">Rain</a></li>
+          <li><a href="#" class="hover:underline block">Multi-Function</a></li>
+          <li><a href="#" class="hover:underline block">Hand Showers</a></li>
+          <li><a href="#" class="hover:underline block">Shower Arms</a></li>
+        </ul>
+      </div>
+      <!-- Column 3 -->
+      <div>
+        <h4 class="font-semibold mb-2">Health Faucets</h4>
+        <a href="#" class="block hover:underline">Explore Range</a>
+      </div>
+      <!-- Column 4 -->
+      <div>
+        <h4 class="font-semibold mb-2">Accessories</h4>
+        <ul>
+          <li><a href="#" class="hover:underline block">Cosmo</a></li>
+          <li><a href="#" class="hover:underline block">Nova</a></li>
+        </ul>
+      </div>
+      <!-- Column 5 -->
+      <div>
+        <h4 class="font-semibold mb-2">Addons</h4>
+        <ul>
+          <li><a href="#" class="hover:underline block">Diverters</a></li>
+          <li><a href="#" class="hover:underline block">Angle Valve</a></li>
+        </ul>
+      </div>
+      <!-- Column 6 -->
+      <div>
+        <h4 class="font-semibold mb-2">Allieds</h4>
+        <a href="#" class="block hover:underline">All Allieds</a>
+      </div>
+    </div>
+
+    <!-- Visit Collections Button -->
+    <div class="mt-8 text-center">
+      <a href="#collections" class="inline-block bg-white text-[#004d40] px-6 py-3 rounded-full font-semibold hover:bg-gray-100">
+        Visit Collections
+      </a>
+    </div>
+  </div>
+  <!-- Support Mega Menu -->
+<div id="supportMenu" class="hidden absolute left-0 top-full w-full bg-[#004d40] text-white z-40 shadow-lg px-12 py-8">
+  <div class="grid grid-cols-4 gap-6 max-w-7xl mx-auto text-sm">
+    <div>
+      <h4 class="font-semibold mb-2">Support Sections</h4>
+      <ul>
+        <li><a href="support.html" class="hover:underline block">Service</a></li>
+        <li><a href="support.html" class="hover:underline block">Warranty</a></li>
+        <li><a href="support.html" class="hover:underline block">Quality</a></li>
+        <li><a href="support.html" class="hover:underline block">Helpful Topics</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</header>
+
+
+<!-- Content remains unchanged -->
+
+
+<!-- Hero Section -->
+<section class="relative h-screen overflow-hidden">
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+    <source src="video.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
   <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-
-  <!-- Content -->
   <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
     <h2 class="text-4xl md:text-6xl font-bold mb-4">Experience the Power of Design</h2>
     <p class="text-lg md:text-xl mb-6">Premium products that speak your brand’s language</p>
-    <a href="#about" class="bg-white text-black font-semibold px-6 py-3 rounded-full hover:bg-gray-300 transition">
+    <a href="#story" class="bg-white text-black font-semibold px-6 py-3 rounded-full hover:bg-gray-300 transition">
       Learn More
     </a>
   </div>
 </section>
 
-<!-- About Section -->
-<section id="about" class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-    
-    <!-- Text content -->
-    <div>
-      <h3 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">About Us</h3>
-      <p class="text-lg text-gray-600 mb-6">
-        Auralis was born from a desire to transform bathing into 
-        a luxurious experience. Inspired by the ethereal beauty of 
-        auroras and the harmony of nature, we craft luxurious bath 
-        products that nourish the body and elevate the senses. 
-        Our name, Auralis, reflects the luminous essence of an 
-        aurora—a gentle radiance that transforms the ordinary 
-        into the extraordinary. This philosophy guides us to create 
-        products that infuse every bath with indulgence, leaving you 
-        feeling as radiant and serene as the celestial skies. Step into 
-        a realm of serenity and sophistication.
-         In a world where everyday routines often overshadow 
-        moments of true self-care, auralis was born to bring a touch 
-        of celestial luxury to your bathing experience. Inspired by 
-        the ethereal glow of the auroras and the natural harmony 
-        of Earth’s elements, auralis creates a sanctuary where the 
-        cosmos and nature unite to rejuvenate your mind and body
-      </p>
-      <p class="text-lg text-gray-600">
-        Our commitment to quality and detail is what makes us stand out in the industry.
-      </p>
-    </div>
-
-    <!-- Image -->
-    <div>
-      <img src="image2.png" alt="About Us" class="rounded-xl shadow-lg">
-    </div>
-
-  </div>
-</section>
 
 <!-- Products Section -->
-<!-- Collections Grid Section -->
 <section id="collections" class="py-16 bg-gray-100">
   <div class="max-w-7xl mx-auto px-6 text-center">
     <h3 class="text-3xl md:text-4xl font-bold mb-12 text-gray-800">Our Product Collections</h3>
-
     <div class="grid gap-8 md:grid-cols-4 sm:grid-cols-2">
-
-      <!-- Orion Taps Collection -->
       <a href="pages/orion.html" class="block bg-white rounded-xl shadow hover:shadow-lg transition p-4">
         <img src="images/orion.png" alt="Orion Taps" class="rounded mb-4">
         <h4 class="text-xl font-semibold text-gray-800">Orion</h4>
       </a>
-   
-
-      <!-- Astra Taps Collection -->
-      <a href="pages/astra.html" class="bg-white rounded-xl shadow hover:shadow-lg transition p-4 cursor-pointer" onclick="showCollectionDetail('astra')">
+      <a href="pages/astra.html" class="block bg-white rounded-xl shadow hover:shadow-lg transition p-4">
         <img src="images/astra.png" alt="Astra Taps" class="rounded mb-4">
         <h4 class="text-xl font-semibold text-gray-800">Astra</h4>
       </a>
-
-      <!-- Nova Taps -->
-      <a href="pages/nova.html" class="bg-white rounded-xl shadow hover:shadow-lg transition p-4 cursor-pointer" onclick="showCollectionDetail('nova')">
+      <a href="pages/nova.html" class="block bg-white rounded-xl shadow hover:shadow-lg transition p-4">
         <img src="images/nova.png" alt="Nova Taps" class="rounded mb-4">
         <h4 class="text-xl font-semibold text-gray-800">Nova</h4>
       </a>
-
-      <!-- Add-ons -->
-      <a href="pages/addons.html" class="bg-white rounded-xl shadow hover:shadow-lg transition p-4 cursor-pointer" onclick="showCollectionDetail('addons')">
+      <a href="pages/addons.html" class="block bg-white rounded-xl shadow hover:shadow-lg transition p-4">
         <img src="images/addons.png" alt="Add-ons" class="rounded mb-4">
-        <h4 class="text-xl font-semibold text-gray-800">Addons</h4>
+        <h4 class="text-xl font-semibold text-gray-800">Add-ons</h4>
       </a>
-
-      <!-- Allieds -->
-      <a href="pages/allieds.html" class="bg-white rounded-xl shadow hover:shadow-lg transition p-4 cursor-pointer" onclick="showCollectionDetail('allieds')">
+      <a href="pages/allieds.html" class="block bg-white rounded-xl shadow hover:shadow-lg transition p-4">
         <img src="images/allieds.png" alt="Allieds" class="rounded mb-4">
         <h4 class="text-xl font-semibold text-gray-800">Allieds</h4>
       </a>
-
-      <!-- Showers -->
-      <a href="pages/showers.html" class="bg-white rounded-xl shadow hover:shadow-lg transition p-4 cursor-pointer" onclick="showCollectionDetail('showers')">
+      <a href="pages/showers.html" class="block bg-white rounded-xl shadow hover:shadow-lg transition p-4">
         <img src="images/showers.png" alt="Showers" class="rounded mb-4">
         <h4 class="text-xl font-semibold text-gray-800">Showers</h4>
       </a>
-
-      <!-- Health Faucets -->
-      <a href="pages/healthfaucets.html" class="bg-white rounded-xl shadow hover:shadow-lg transition p-4 cursor-pointer" onclick="showCollectionDetail('healthfaucets')">
+      <a href="pages/healthfaucets.html" class="block bg-white rounded-xl shadow hover:shadow-lg transition p-4">
         <img src="images/health faucet.png" alt="Health Faucets" class="rounded mb-4">
         <h4 class="text-xl font-semibold text-gray-800">Health Faucets</h4>
       </a>
-
-      <!-- Accessories -->
-      <a href="pages/accessories.html" class="bg-white rounded-xl shadow hover:shadow-lg transition p-4 cursor-pointer" onclick="showCollectionDetail('accessories')">
+      <a href="pages/accessories.html" class="block bg-white rounded-xl shadow hover:shadow-lg transition p-4">
         <img src="images/accessories.png" alt="Accessories" class="rounded mb-4">
         <h4 class="text-xl font-semibold text-gray-800">Accessories</h4>
       </a>
-
     </div>
   </div>
 </section>
 
-<!-- Placeholder for dynamic collection detail -->
-<section id="collection-detail" class="hidden py-16 bg-white">
+<!-- Our Story -->
+<section id="story" class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h3 class="text-3xl font-bold mb-4 text-[#004d40]">Our Story</h3>
+      <p class="text-lg text-gray-700 mb-6">
+        At Auralis, we believe that bathing is more than a routine — it's a moment of personal sanctuary.
+        Born from a desire to bring luxury and tranquility into everyday life, we are inspired by the ethereal beauty of auroras and natural harmony of the universe.
+        Our name reflects this vision — like an aurora, Auralis radiates a gentle brilliance that transforms the ordinary into the extraordinary.
+        Every product is designed to nourish the body, calm the mind and elevate the senses, turning simple moments into indulgent rituals.
+        <strong>Welcome to Auralis — Illuminate Your Ritual</strong>
+      </p>
+    </div>
+    <div>
+      <img src="images/aboutus.png" alt="About Auralis" class="rounded-xl shadow-lg">
+    </div>
+  </div>
+</section>
+
+<!-- Vision -->
+<section id="vision" class="py-16 bg-gray-100">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h3 class="text-3xl font-bold mb-4 text-[#004d40]">Vision</h3>
+      <p class="text-lg text-gray-700">
+        To be India’s most trusted bath and home solutions brand, blending design, technology and care to elevate everyday living.
+      </p>
+    </div>
+    <div>
+      <img src="images/vision.jpg" alt="Vision" class="rounded-xl shadow-lg">
+    </div>
+  </div>
+</section>
+
+<!-- Locate Us -->
+<section id="locate" class="py-16 bg-white">
   <div class="max-w-7xl mx-auto px-6">
-    <!-- Content will be injected by JS -->
+    <h3 class="text-3xl font-bold mb-10 text-[#004d40] text-center">Locate Us</h3>
+    <div class="grid md:grid-cols-3 gap-8 text-center text-gray-700">
+      <div>
+        <img src="images/office.jpg" class="rounded-lg mb-4" />
+        <h4 class="font-semibold">Registered Office</h4>
+        <p>Unit No. 319, 3rd Floor,<br/>Eros Corporate Park, IMT Manesar, Gurgaon</p>
+      </div>
+      <div>
+        <img src="images/factory.jpg" class="rounded-lg mb-4" />
+        <h4 class="font-semibold">Manufacturing Locations</h4>
+        <p>Delhi, Punjab, Gujarat & UP<br/>Strategic state-of-the-art facilities</p>
+      </div>
+      <div>
+        <img src="images/capacity.jpg" class="rounded-lg mb-4" />
+        <h4 class="font-semibold">Manufacturing Capability</h4>
+        <p>6 Lac units/year<br/>Expandable to 12 Lac units/year</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -166,7 +259,6 @@
 <section id="contact" class="py-16 bg-gray-200">
   <div class="max-w-7xl mx-auto px-6 text-center">
     <h3 class="text-3xl md:text-4xl font-bold mb-8 text-gray-800">Contact Us</h3>
-
     <form action="#" method="POST" class="space-y-6">
       <div class="flex flex-col md:flex-row md:space-x-6">
         <div class="flex-1">
@@ -176,37 +268,59 @@
           <input type="email" name="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded-lg" required />
         </div>
       </div>
-
       <div>
         <textarea name="message" placeholder="Your Message" class="w-full p-3 border border-gray-300 rounded-lg" rows="6" required></textarea>
       </div>
-
-      <button type="submit" class="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-700 transition">Send Message</button>
+      <button type="submit" class="bg-[#004d40] text-white px-6 py-3 rounded-full hover:bg-[#00332d] transition">Send Message</button>
     </form>
   </div>
 </section>
-  </main>
 
 <!-- Footer -->
-<footer class="bg-black text-white py-8">
+<footer class="bg-[#004d40] text-white py-8">
   <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-    <!-- Logo & Brand -->
     <h1 class="text-2xl font-bold">Auralis</h1>
-
-    <!-- Social Media Links -->
     <div class="flex space-x-6">
-      <a href="#" class="hover:text-gray-400 transition">Facebook</a>
-      <a href="#" class="hover:text-gray-400 transition">Instagram</a>
-      <a href="#" class="hover:text-gray-400 transition">Twitter</a>
-      <a href="#" class="hover:text-gray-400 transition">LinkedIn</a>
+      <a href="#" class="hover:text-gray-400">Facebook</a>
+      <a href="#" class="hover:text-gray-400">Instagram</a>
+      <a href="#" class="hover:text-gray-400">Twitter</a>
+      <a href="#" class="hover:text-gray-400">LinkedIn</a>
     </div>
   </div>
-
-  <!-- Copyright -->
-  <div class="text-center text-gray-400 mt-6">
+  <div class="text-center text-gray-300 mt-6">
     <p>&copy; 2025 Auralis. All rights reserved.</p>
   </div>
 </footer>
+<script>
+  const toggleBtn = document.getElementById('productsToggle');
+  const productsMenu = document.getElementById('productsMenu');
+
+  toggleBtn.addEventListener('click', () => {
+    productsMenu.classList.toggle('hidden');
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!toggleBtn.contains(e.target) && !productsMenu.contains(e.target)) {
+      productsMenu.classList.add('hidden');
+    }
+  });
+
+  const supportToggle = document.getElementById('supportToggle');
+const supportMenu = document.getElementById('supportMenu');
+
+supportToggle.addEventListener('click', () => {
+  supportMenu.classList.toggle('hidden');
+  productsMenu.classList.add('hidden');
+});
+
+document.addEventListener('click', (e) => {
+  if (!supportToggle.contains(e.target) && !supportMenu.contains(e.target)) {
+    supportMenu.classList.add('hidden');
+  }
+});
+
+</script>
 
 
 </body>
